@@ -4,14 +4,13 @@ import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TestsForCingo extends TestConfig {
 
 
-    private String url = "https://app.dev.cingo.co/";
-    private String userNameForLogin = "Tester11";
+    private String url = "https://app.dev3.cingo.co/";
+    private String userNameForLogin = "Tester11111";
     private String passwordForLogin = "Test123456!";
     private String numberForCode = "0";
 
@@ -38,22 +37,46 @@ public class TestsForCingo extends TestConfig {
 
         $(".mantine-1avyp1d a").click();
         $(byText("Welcome to Cingo")).shouldBe(Condition.visible);
-        $("input[data-testid=\"username\"]").setValue(userNameForLogin);
-        $("input[data-testid=\"password\"]").setValue(passwordForLogin);
-        $("button[data-testid=\"login-button\"]").click();
+        loginPage.typeUserName(userNameForLogin);
+//        $("input[data-testid=\"username\"]").setValue(userNameForLogin);
+        loginPage.typePassword(passwordForLogin);
+//        $("input[data-testid=\"password\"]").setValue(passwordForLogin);
+        loginPage.clickSubmitButton();
+//        $("button[data-testid=\"login-button\"]").click();
         $(byText("We take data privacy seriously.")).shouldBe(Condition.visible);
 
-        $("input[data-testid=\"pin-input-0\"]").setValue(numberForCode);
-        $("input[data-testid=\"pin-input-1\"]").setValue(numberForCode);
-        $("input[data-testid=\"pin-input-2\"]").setValue(numberForCode);
-        $("input[data-testid=\"pin-input-3\"]").setValue(numberForCode);
-        $("input[data-testid=\"pin-input-4\"]").setValue(numberForCode);
-        $("input[data-testid=\"pin-input-5\"]").setValue(numberForCode);
+        $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 2\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 3\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 4\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 5\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 6\"]").setValue(numberForCode);
 
         $("button[type=\"submit\"]").click();
+//
+//        $(byText("Be sure to add all current IDs that you possess.")).shouldBe(Condition.visible);
+//        $("button[data-testid=\"saveAndExit\"]").click();
+    }
+    @Test
+    void fromLoginToSignUpForm(){
+        open(url);
 
-        $(byText("Be sure to add all current IDs that you possess.")).shouldBe(Condition.visible);
-        $("button[data-testid=\"saveAndExit\"]").click();
+        $(".mantine-1avyp1d a").click();
+        $(byText("Welcome to Cingo")).shouldBe(Condition.visible);
+        loginPage.clickToSignUpLink();
+        $(byText("Hi there!")).shouldBe(Condition.visible);
+        sleep(2000);
+    }
+
+    @Test
+    void fromLoginToForgotPasswordForm(){
+        open(url);
+
+        $(".mantine-1avyp1d a").click();
+        $(byText("Welcome to Cingo")).shouldBe(Condition.visible);
+        loginPage.clickToForgotPasswordLink();
+        $(byText("Reset your password")).shouldBe(Condition.visible);
+        sleep(2000);
     }
 
 
