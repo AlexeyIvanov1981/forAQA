@@ -33,10 +33,7 @@ public class TestsForCingo extends TestConfig {
 
     @Test
     void logInCingo() {
-        open(url);
-
-        $(".mantine-1avyp1d a").click();
-        $(byText("Welcome to Cingo")).shouldBe(Condition.visible);
+        loginPage.openLoginPage(url);
         loginPage.typeUserName(userNameForLogin);
 //        $("input[data-testid=\"username\"]").setValue(userNameForLogin);
         loginPage.typePassword(passwordForLogin);
@@ -57,23 +54,18 @@ public class TestsForCingo extends TestConfig {
 //        $(byText("Be sure to add all current IDs that you possess.")).shouldBe(Condition.visible);
 //        $("button[data-testid=\"saveAndExit\"]").click();
     }
-    @Test
-    void fromLoginToSignUpForm(){
-        open(url);
 
-        $(".mantine-1avyp1d a").click();
-        $(byText("Welcome to Cingo")).shouldBe(Condition.visible);
+    @Test
+    void fromLoginToSignUpForm() {
+        loginPage.openLoginPage(url);
         loginPage.clickToSignUpLink();
         $(byText("Hi there!")).shouldBe(Condition.visible);
         sleep(2000);
     }
 
     @Test
-    void fromLoginToForgotPasswordForm(){
-        open(url);
-
-        $(".mantine-1avyp1d a").click();
-        $(byText("Welcome to Cingo")).shouldBe(Condition.visible);
+    void fromLoginToForgotPasswordForm() {
+        loginPage.openLoginPage(url);
         loginPage.clickToForgotPasswordLink();
         $(byText("Reset your password")).shouldBe(Condition.visible);
         sleep(2000);

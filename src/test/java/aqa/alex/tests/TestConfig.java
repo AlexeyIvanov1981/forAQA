@@ -1,11 +1,12 @@
 package aqa.alex.tests;
 
 import aqa.alex.pages.LoginPage;
-import org.junit.jupiter.api.BeforeAll;
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 
 public class TestConfig {
     LoginPage loginPage = new LoginPage();
+
     @BeforeAll
     static void browserSettings() {
         Configuration.browser = "FIREFOX";
