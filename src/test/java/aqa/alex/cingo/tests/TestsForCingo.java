@@ -72,6 +72,7 @@ public class TestsForCingo extends TestConfig {
         loginPage.openLoginPage(url);
         loginPage.clickToSignUpLink();
         $(byText("Hi there!")).shouldBe(Condition.visible);
+
         sleep(2000);
     }
 
@@ -80,6 +81,7 @@ public class TestsForCingo extends TestConfig {
         loginPage.openLoginPage(url);
         loginPage.clickToForgotPasswordLink();
         $(byText("Reset your password")).shouldBe(Condition.visible);
+
         sleep(2000);
     }
 }
