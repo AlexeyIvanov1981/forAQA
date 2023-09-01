@@ -1,4 +1,4 @@
-package aqa.alex.pages;
+package aqa.alex.cingo.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

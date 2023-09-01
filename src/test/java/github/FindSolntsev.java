@@ -1,9 +1,6 @@
 package github;
 
-import aqa.alex.tests.TestConfig;
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
+import aqa.alex.cingo.tests.TestConfig;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
