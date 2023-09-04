@@ -10,10 +10,10 @@ public class TestsForCingo extends TestConfig {
 
 
     private String url = "https://app.dev3.cingo.co/";
-    private String userNameForLogin = "Tester11111";
-    private String passwordForLoginAndRedisret = "Test123456!";
+    private String userNameForLogin = "Tester1";
+    private String passwordForLoginAndRegister = "Test123456!";
     private String numberForCode = "0";
-    private String emailForRegister = randomNumber(100, 999) + "@" + randomNumber(100, 999) + ".io";
+    private String emailForRegister = randomNumber(100, 999) + "A@A" + randomNumber(100, 999) + ".test";
 
     private String userNameForRegister = "Tester" + randomNumber(1000, 9999);
 
@@ -32,12 +32,70 @@ public class TestsForCingo extends TestConfig {
 //        $("input[data-testid=\"username\"]").setValue("Tester" + randomNumber(1000, 9999));
         registrationPage.typeEmail(emailForRegister);
 //        $("input[data-testid=\"email\"]").setValue(randomNumber(100, 999) + "@" + randomNumber(100, 999) + ".io");
-        registrationPage.typePassword(passwordForLoginAndRedisret);
+        registrationPage.typePassword(passwordForLoginAndRegister);
 //        $("input[data-testid=\"password\"]").setValue(passwordForLoginAndRegister);
-        registrationPage.typeConfirmPassword(passwordForLoginAndRedisret);
+        registrationPage.typeConfirmPassword(passwordForLoginAndRegister);
 //        $("input[data-testid=\"confirm_password\"]").setValue(passwordForLoginAndRegister);
         registrationPage.clickSubmitButton();
-//        // $("button[data-testid=\"registration-button\"]").click();
+
+//        sleep(3000);
+
+        $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 2\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 3\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 4\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 5\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 6\"]").setValue(numberForCode);
+        $("button[type=\"submit\"]").click();
+
+        $("input[data-testid=\"phone-input\"]").setValue("203547" + randomNumber(1000, 9999));
+        $("#__next > div.mantine-Container-root.mantine-1yo1d0s > div.mantine-xsyj9d > div.mantine-1svrki4 > form > div.mantine-1avyp1d > div.mantine-kq9pwx > button > div").click();
+
+//        sleep(2000);
+        $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 2\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 3\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 4\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 5\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 6\"]").setValue(numberForCode);
+        $("button[type=\"submit\"]").click();
+
+        loginPage.typeUserName(userNameForRegister);
+        loginPage.typePassword(passwordForLoginAndRegister);
+        loginPage.clickSubmitButton();
+        $(byText("We take data privacy seriously.")).shouldBe(Condition.visible);
+//        sleep(2000);
+
+        $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 2\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 3\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 4\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 5\"]").setValue(numberForCode);
+        $("input[aria-label=\"Digit 6\"]").setValue(numberForCode);
+        $("button[type=\"submit\"]").click();
+
+        sleep(7000);
+        $(byText("3-step set up")).shouldBe(Condition.visible);
+
+
+
+
+//        loginPage.typeUserName(userNameForRegister);
+//        loginPage.typePassword(passwordForLoginAndRegister);
+//        loginPage.clickSubmitButton();
+//        $(byText("We take data privacy seriously.")).shouldBe(Condition.visible);
+//        $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
+//        $("input[aria-label=\"Digit 2\"]").setValue(numberForCode);
+//        $("input[aria-label=\"Digit 3\"]").setValue(numberForCode);
+//        $("input[aria-label=\"Digit 4\"]").setValue(numberForCode);
+//        $("input[aria-label=\"Digit 5\"]").setValue(numberForCode);
+//        $("input[aria-label=\"Digit 6\"]").setValue(numberForCode);
+//
+//        $("button[type=\"submit\"]").click();
+//
+//        sleep(3000);
+////
+//        $(byText("3-step set up")).shouldBe(Condition.visible);
 
     }
 
@@ -46,7 +104,7 @@ public class TestsForCingo extends TestConfig {
         loginPage.openLoginPage(url);
         loginPage.typeUserName(userNameForLogin);
 //        $("input[data-testid=\"username\"]").setValue(userNameForLogin);
-        loginPage.typePassword(passwordForLoginAndRedisret);
+        loginPage.typePassword(passwordForLoginAndRegister);
 //        $("input[data-testid=\"password\"]").setValue(passwordForLogin);
         loginPage.clickSubmitButton();
 //        $("button[data-testid=\"login-button\"]").click();
@@ -63,7 +121,7 @@ public class TestsForCingo extends TestConfig {
 
         sleep(3000);
 //
-//        $(byText("Be sure to add all current IDs that you possess.")).shouldBe(Condition.visible);
+        $(byText("3-step set up")).shouldBe(Condition.visible);
 //        $("button[data-testid=\"saveAndExit\"]").click();
     }
 
