@@ -10,7 +10,7 @@ public class TestsForCingo extends TestConfig {
 
 
     private String url = "https://app.dev3.cingo.co/";
-    private String userNameForLogin = "Tester1";
+    private String userNameForLogin = "Tester2";
     private String passwordForLoginAndRegister = "Test123456!";
     private String numberForCode = "0";
     private String emailForRegister = randomNumber(100, 999) + "A@A" + randomNumber(100, 999) + ".test";
@@ -38,7 +38,7 @@ public class TestsForCingo extends TestConfig {
 //        $("input[data-testid=\"confirm_password\"]").setValue(passwordForLoginAndRegister);
         registrationPage.clickSubmitButton();
 
-//        sleep(3000);
+        sleep(3000);
 
         $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
         $("input[aria-label=\"Digit 2\"]").setValue(numberForCode);
@@ -49,7 +49,8 @@ public class TestsForCingo extends TestConfig {
         $("button[type=\"submit\"]").click();
 
         $("input[data-testid=\"phone-input\"]").setValue("203547" + randomNumber(1000, 9999));
-        $("#__next > div.mantine-Container-root.mantine-1yo1d0s > div.mantine-xsyj9d > div.mantine-1svrki4 > form > div.mantine-1avyp1d > div.mantine-kq9pwx > button > div").click();
+        $("#__next > div.mantine-Container-root.mantine-1yo1d0s > div.mantine-xsyj9d > div.mantine-1svrki4 > " +
+                "form > div.mantine-1avyp1d > div.mantine-kq9pwx > button > div").click();
 
 //        sleep(2000);
         $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
@@ -76,27 +77,6 @@ public class TestsForCingo extends TestConfig {
 
         sleep(7000);
         $(byText("3-step set up")).shouldBe(Condition.visible);
-
-
-
-
-//        loginPage.typeUserName(userNameForRegister);
-//        loginPage.typePassword(passwordForLoginAndRegister);
-//        loginPage.clickSubmitButton();
-//        $(byText("We take data privacy seriously.")).shouldBe(Condition.visible);
-//        $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
-//        $("input[aria-label=\"Digit 2\"]").setValue(numberForCode);
-//        $("input[aria-label=\"Digit 3\"]").setValue(numberForCode);
-//        $("input[aria-label=\"Digit 4\"]").setValue(numberForCode);
-//        $("input[aria-label=\"Digit 5\"]").setValue(numberForCode);
-//        $("input[aria-label=\"Digit 6\"]").setValue(numberForCode);
-//
-//        $("button[type=\"submit\"]").click();
-//
-//        sleep(3000);
-////
-//        $(byText("3-step set up")).shouldBe(Condition.visible);
-
     }
 
     @Test
@@ -119,7 +99,7 @@ public class TestsForCingo extends TestConfig {
 
         $("button[type=\"submit\"]").click();
 
-        sleep(3000);
+        sleep(6000);
 //
         $(byText("3-step set up")).shouldBe(Condition.visible);
 //        $("button[data-testid=\"saveAndExit\"]").click();
