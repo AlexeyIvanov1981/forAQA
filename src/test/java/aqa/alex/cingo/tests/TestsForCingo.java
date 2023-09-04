@@ -13,7 +13,7 @@ public class TestsForCingo extends TestConfig {
     private String userNameForLogin = "Tester2";
     private String passwordForLoginAndRegister = "Test123456!";
     private String numberForCode = "0";
-    private String emailForRegister = randomNumber(100, 999) + "A@A" + randomNumber(100, 999) + ".test";
+    private String emailForRegister = randomNumber(100, 999) + "@" + randomNumber(100, 999) + ".io";
 
     private String userNameForRegister = "Tester" + randomNumber(1000, 9999);
 
