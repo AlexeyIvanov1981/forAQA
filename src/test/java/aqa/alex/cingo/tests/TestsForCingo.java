@@ -4,7 +4,8 @@ import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class TestsForCingo extends TestConfig {
 
@@ -37,7 +38,6 @@ public class TestsForCingo extends TestConfig {
         registrationPage.typeConfirmPassword(passwordForLoginAndRegister);
 //        $("input[data-testid=\"confirm_password\"]").setValue(passwordForLoginAndRegister);
         registrationPage.clickSubmitButton();
-
 
 
         $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
@@ -110,16 +110,13 @@ public class TestsForCingo extends TestConfig {
         loginPage.openLoginPage(url);
         loginPage.clickToSignUpLink();
         $(byText("Hi there!")).shouldBe(Condition.visible);
-
-        sleep(2000);
     }
 
     @Test
     void checkForgotPasswordLink() {
         loginPage.openLoginPage(url);
+//        $(By.linkText("Click here.")).click();
         loginPage.clickToForgotPasswordLink();
         $(byText("Reset your password")).shouldBe(Condition.visible);
-
-        sleep(2000);
     }
 }
