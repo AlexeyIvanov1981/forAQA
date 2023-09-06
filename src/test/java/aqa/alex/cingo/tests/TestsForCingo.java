@@ -23,7 +23,7 @@ public class TestsForCingo extends TestConfig {
 //        // Open site
         registrationPage.openRegistrationPage(url);
 //        open(url);
-//        // Fill in all fields of the registration form
+
         registrationPage.typeFirstName("AlesTest");
 //        $("input[data-testid=\"first_name\"]").setValue("Alex");
         registrationPage.typeLastName("AlexLastName");
@@ -38,7 +38,7 @@ public class TestsForCingo extends TestConfig {
 //        $("input[data-testid=\"confirm_password\"]").setValue(passwordForLoginAndRegister);
         registrationPage.clickSubmitButton();
 
-        sleep(3000);
+
 
         $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
         $("input[aria-label=\"Digit 2\"]").setValue(numberForCode);
@@ -52,7 +52,7 @@ public class TestsForCingo extends TestConfig {
         $("#__next > div.mantine-Container-root.mantine-1yo1d0s > div.mantine-xsyj9d > div.mantine-1svrki4 > " +
                 "form > div.mantine-1avyp1d > div.mantine-kq9pwx > button > div").click();
 
-//        sleep(2000);
+
         $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
         $("input[aria-label=\"Digit 2\"]").setValue(numberForCode);
         $("input[aria-label=\"Digit 3\"]").setValue(numberForCode);
@@ -65,7 +65,7 @@ public class TestsForCingo extends TestConfig {
         loginPage.typePassword(passwordForLoginAndRegister);
         loginPage.clickSubmitButton();
         $(byText("We take data privacy seriously.")).shouldBe(Condition.visible);
-//        sleep(2000);
+
 
         $("input[aria-label=\"Please enter verification code. Digit 1\"]").setValue(numberForCode);
         $("input[aria-label=\"Digit 2\"]").setValue(numberForCode);
@@ -75,7 +75,7 @@ public class TestsForCingo extends TestConfig {
         $("input[aria-label=\"Digit 6\"]").setValue(numberForCode);
         $("button[type=\"submit\"]").click();
 
-        sleep(7000);
+        sleep(3000);
         $(byText("3-step set up")).shouldBe(Condition.visible);
     }
 
