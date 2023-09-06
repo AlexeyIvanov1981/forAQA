@@ -14,7 +14,7 @@ public class SelenideTest {
     @BeforeAll
     static void browserSettings() {
         Configuration.browser = "FIREFOX";
-        Configuration.startMaximized = true;
+        Configuration.browserSize = "1920x1200";
     }
     @Test
     public void githubTest (){

@@ -12,7 +12,7 @@ public class TestConfig {
     @BeforeAll
     static void browserSettings() {
         Configuration.browser = "FIREFOX";
-        Configuration.startMaximized = true;
+        Configuration.browserSize = "1920x1200";
     }
 
     public int randomNumber(int minValue, int maxValue) {

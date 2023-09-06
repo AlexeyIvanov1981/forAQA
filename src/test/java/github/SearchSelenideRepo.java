@@ -12,7 +12,7 @@ public class SearchSelenideRepo {
     @BeforeAll
     static void chooseBrowser() {
         Configuration.browser = "FIREFOX";
-        Configuration.startMaximized = true;
+        Configuration.browserSize = "1920x1200";
     }
 
     @Test
