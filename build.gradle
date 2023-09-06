@@ -1,5 +1,21 @@
 plugins {
     id("java")
+    id("io.qameta.allure") version "2.9.4"
+}
+
+allure {
+    report {
+        version.set("2.18.1")
+    }
+    adapter {
+        autoconfigure.set(true)
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.18.1")
+            }
+        }
+    }
 }
 
 repositories {
@@ -7,7 +23,7 @@ repositories {
 }
 
 java {
-    toolchain{
+    toolchain {
         languageVersion = JavaLanguageVersion.of(11)
     }
 }
