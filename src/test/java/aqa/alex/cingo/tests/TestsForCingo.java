@@ -11,7 +11,7 @@ public class TestsForCingo extends TestConfig {
 
 
     private String url = "https://app.dev3.cingo.co/";
-    private String userNameForLogin = "Tester2";
+    private String userNameForLogin = "Tester999";
     private String passwordForLoginAndRegister = "Test123456!";
     private String numberForCode = "0";
     private String emailForRegister = randomNumber(100, 999) + "@" + randomNumber(100, 999) + ".io";
@@ -99,7 +99,7 @@ public class TestsForCingo extends TestConfig {
 
         $("button[type=\"submit\"]").click();
 
-        sleep(6000);
+        sleep(4000);
 //
         $(byText("3-step set up")).shouldBe(Condition.visible);
 //        $("button[data-testid=\"saveAndExit\"]").click();
@@ -108,6 +108,7 @@ public class TestsForCingo extends TestConfig {
     @Test
     void checkSignUpLink() {
         loginPage.openLoginPage(url);
+//        $(By.linkText("Sign up Now")).click();
         loginPage.clickToSignUpLink();
         $(byText("Hi there!")).shouldBe(Condition.visible);
     }
