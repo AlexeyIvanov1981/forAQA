@@ -3,7 +3,7 @@ package webDriver.config;
 public class WebDriverConfig {
 
     public Browser getBrowser() {
-        return Browser.FIREFOX;
+        return Browser.CHROME;
     }
 
     public String baseURL() {
