@@ -9,11 +9,11 @@ public class TestConfig {
     RegistrationPage registrationPage = new RegistrationPage();
     LoginPage loginPage = new LoginPage();
 
-    @BeforeAll
-    static void browserSettings() {
-        Configuration.browser = "FIREFOX";
-        Configuration.browserSize = "1920x1200";
-    }
+//    @BeforeAll
+//    static void browserSettings() {
+//        Configuration.browser = "FIREFOX";
+//        Configuration.browserSize = "1920x1200";
+//    }
 
     public int randomNumber(int minValue, int maxValue) {
         return minValue + (int) (Math.random() * (maxValue - minValue + 1));
