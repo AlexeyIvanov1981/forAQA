@@ -15,8 +15,7 @@ public class TestWebDriver {
 
     @Test
     public void testGitHubTitleChrome() {
-        driver.get("https://github.com");
-        assertEquals("https://github.com/", driver.getCurrentUrl());
+        assertEquals("https://www.youtube.com/", driver.getCurrentUrl());
         driver.close();
     }
 
