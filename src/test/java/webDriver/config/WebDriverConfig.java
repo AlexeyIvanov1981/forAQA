@@ -6,7 +6,7 @@ public class WebDriverConfig {
         return Browser.FIREFOX;
     }
 
-    public String baseURL(){
+    public String baseURL() {
         return "https://www.youtube.com/";
     }
 }
